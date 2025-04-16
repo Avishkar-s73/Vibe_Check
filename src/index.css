@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 263 63% 57%;  /* Vibrant purple */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 263 63% 57%; /* Match primary */
+    --radius: 0.75rem;
+    
+    /* Custom colors */
+    --genz-purple: 263 63% 57%;
+    --genz-pink: 330 82% 60%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 63% 57%;  /* Keep same purple */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263 63% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .bg-gradient-candy {
+    @apply bg-gradient-to-r from-[#9b87f5] to-[#D946EF] hover:shadow-lg hover:shadow-[#9b87f5]/20 transition-shadow;
+  }
+  
+  .genz-input {
+    @apply bg-muted border-0 rounded-full pl-4 pr-10 py-2 focus:ring-2 focus:ring-primary focus:outline-none;
+  }
+  
+  .genz-link {
+    @apply text-primary underline-offset-2 hover:underline;
+  }
+  
+  .animate-fade-in {
+    @apply animate-in fade-in duration-300;
+  }
+}
+
+/* Reduced animations class */
+.reduce-animations * {
+  transition-duration: 0.05s !important;
+  animation-duration: 0.05s !important;
+}
+
+/* Vibrant mode customizations */
+.vibrant-mode.dark {
+  --background: 240 20% 7%;
+  --card: 240 20% 9%;
+  --muted: 240 20% 12%;
+  --primary: 263 73% 62%;
+  --accent: 330 82% 65%;
+}
+
+.vibrant-mode:not(.dark) {
+  --primary: 263 85% 50%;
+  --accent: 330 90% 56%;
+}
+
+.vibrant-mode .bg-gradient-candy {
+  @apply bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] hover:shadow-lg hover:shadow-[#8B5CF6]/30 transition-shadow;
+}
