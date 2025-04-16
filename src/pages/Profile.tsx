@@ -19,8 +19,8 @@ const Profile = () => {
 
   // Mock user data - would come from API in a real app
   const userData = {
-    name: isCurrentUser ? "Your Profile" : "Avishkar Durgade",
-    username: isCurrentUser ? "vibechecker" : "avidurgade",
+    name: isCurrentUser ? "Your Profile" : "Stranger Profile",
+    username: isCurrentUser ? "vibechecker" : "stranger",
     avatar: isCurrentUser
       ? "https://freepngimg.com/thumb/doraemon/35165-2-doraemon-hd-thumb.png"
       : "https://freepngimg.com/thumb/doraemon/35165-2-doraemon-hd-thumb.png",
