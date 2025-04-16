@@ -1,4 +1,3 @@
-
 export interface NewsItem {
   id: string;
   title: string;
@@ -44,260 +43,293 @@ export const moods: MoodType[] = [
     id: "just-woke-up",
     name: "Just Woke Up",
     icon: "☕",
-    description: "Light, uplifting news to start your day"
+    description: "Light, uplifting news to start your day",
   },
   {
     id: "mentally-checked-out",
     name: "Mentally Checked Out",
     icon: "🥱",
-    description: "Easy-to-digest, fun content"
+    description: "Easy-to-digest, fun content",
   },
   {
     id: "spill-the-tea",
     name: "Spill the Tea",
     icon: "🍵",
-    description: "The juiciest gossip and drama"
+    description: "The juiciest gossip and drama",
   },
   {
     id: "activist-era",
     name: "In My Activist Era",
     icon: "✊",
-    description: "Social justice and global causes"
+    description: "Social justice and global causes",
   },
   {
     id: "doomscrolling",
     name: "Doomscrolling",
     icon: "🌀",
-    description: "The tough news you can't look away from"
-  }
+    description: "The tough news you can't look away from",
+  },
 ];
 
 export const newsItems: NewsItem[] = [
   {
     id: "1",
-    title: "Climate Activists Launch Massive Social Campaign to Pressure Tech Giants",
-    slug: "climate-activists-launch-massive-social-campaign",
+    title:
+      "Youth Climate Movement in India Sparks Major Change in Corporate Sustainability",
+    slug: "youth-climate-movement-india",
     category: "Environment",
-    summary: "Gen Z climate activists have launched the biggest social media campaign of the year, targeting tech companies' carbon footprints.",
-    content: "In an unprecedented digital movement, thousands of Gen Z climate activists have coordinated a massive social media campaign targeting the world's largest tech companies over their carbon emissions. Using the hashtag #TechCleanup, activists have created viral TikToks, Instagram Reels, and Twitter threads exposing the environmental practices of major corporations.\n\nThe campaign has already prompted responses from several tech giants, with some pledging to accelerate their timeline to carbon neutrality. The organized effort demonstrates how the younger generation is leveraging their digital native skills to force corporate accountability.\n\n\"We're speaking the language these companies understand - virality and public image,\" said Jamie Chen, one of the campaign organizers. \"When their brands are at stake, they suddenly find ways to make changes they claimed were 'impossible' before.\"\n\nAnalysts are calling this one of the most effective digital advocacy campaigns in recent years, with participation numbers crossing into the millions across platforms.",
+    summary:
+      "Indian Gen Z activists have launched a viral social media campaign demanding eco-responsibility from top Indian corporations.",
+    content:
+      'In a powerful online movement, thousands of young Indian climate activists have organized a nationwide campaign targeting India’s largest corporations over environmental negligence. The campaign, which uses the hashtag #GreenIndiaNow, has taken over Instagram, X (formerly Twitter), and YouTube Shorts.\n\nMajor Indian companies such as Reliance and Adani Group have already issued statements addressing their carbon footprint goals. Many have pledged to accelerate their sustainability efforts.\n\n"We’re digital natives — we know how to hold brands accountable in their own language," said campaign leader Ananya Singh. "If your company can trend, it can also be held responsible."\n\nThe campaign has gone viral, drawing international attention and pushing India\'s corporate sector into the spotlight on sustainability efforts.',
     author: {
-      name: "Deja Washington",
-      avatar: "/placeholder.svg"
+      name: "Rohit Menon",
+      avatar:
+        "https://i.pinimg.com/236x/78/20/50/782050d0c43cdd24fa19a8f5440c8bf9.jpg",
     },
     publishDate: "2023-04-15T14:30:00Z",
     readTime: 4,
-    image: "/placeholder.svg",
+    image:
+      "https://www.sciencespo.fr/psia/chair-sustainable-development/wp-content/uploads/2021/06/Aishwaryaphoto_shutterstock_1577959384-900x600.jpg",
     trending: true,
     tldr: {
       bulletPoints: [
-        "Gen Z climate activists launched massive #TechCleanup campaign",
-        "Campaign targets major tech companies' carbon footprints",
-        "Multiple companies already pledged to speed up carbon neutrality",
-        "Campaign went viral across TikTok, Instagram, and Twitter"
+        "Indian Gen Z launches #GreenIndiaNow campaign",
+        "Targets top Indian companies’ environmental records",
+        "Corporates begin announcing updated green goals",
+        "Massive reach across Instagram, X, and YouTube Shorts",
       ],
-      emojis: ["🌍", "👨‍💻", "🔥", "✊"]
+      emojis: ["🌱", "📱", "🔥", "🇮🇳"],
     },
-    tags: ["climate", "activism", "social media", "tech companies"],
+    tags: ["climate", "activism", "india", "social media"],
     reactions: {
       fire: 1342,
       mindblown: 892,
       sad: 210,
-      cap: 54
+      cap: 54,
     },
     slangTerms: [
       {
         term: "ate",
-        definition: "Did an amazing job, killed it (e.g., 'This campaign really ate')"
+        definition:
+          "Did an amazing job, killed it (e.g., 'This campaign really ate')",
       },
       {
         term: "main character energy",
-        definition: "Acting like you're the protagonist; confidence and self-importance"
-      }
-    ]
+        definition:
+          "Acting like you're the protagonist; confidence and self-importance",
+      },
+    ],
   },
   {
     id: "2",
-    title: "New Study Shows TikTok Algorithm Favors Educational Content Over Dance Trends",
-    slug: "tiktok-algorithm-favors-educational-content",
+    title:
+      "IIT Delhi Study Reveals Indian Users Prefer Educational Reels Over Entertainment",
+    slug: "iit-delhi-study-educational-content",
     category: "Technology",
-    summary: "Surprising new research reveals TikTok's algorithm actually promotes educational content more than dance videos, contrary to popular belief.",
-    content: "A groundbreaking study from researchers at Stanford's Digital Media Lab has revealed that, contrary to popular perception, TikTok's recommendation algorithm actually gives preferential treatment to educational content over dance trends and comedy skits.\n\nThe research team analyzed over 10,000 videos across multiple account types, tracking how quickly they gained traction based on content category. Their findings showed that videos containing educational elements - particularly science, history, and practical skills - were 42% more likely to be pushed to wider audiences than pure entertainment content.\n\n\"This challenges the narrative that TikTok is just about dancing teenagers,\" said Dr. Mira Patel, lead researcher. \"The platform appears to be quietly boosting informative content, which explains the recent explosion of 'EduTok' creators reaching massive audiences.\"\n\nThe study also noted that hybrid content - videos that combine entertainment elements with educational takeaways - performed best of all, suggesting that creators who can make learning entertaining hit the algorithm's sweet spot.\n\nTikTok has not officially commented on the findings, though several high-profile educational creators have reported seeing unusual growth in recent months.",
+    summary:
+      "A study from IIT Delhi shows Indian Instagram and YouTube users engage more with educational content than viral entertainment.",
+    content:
+      'A research team at IIT Delhi has found that Indian users on platforms like Instagram and YouTube are increasingly consuming educational content, overturning the belief that entertainment dominates.\n\nThe study examined over 8,000 viral videos across platforms and discovered that reels with informative content about careers, science, and finance gained significantly more engagement than dance or prank videos.\n\nLead researcher Dr. Meena Rao shared, "Indians are using short-form content not just to unwind but to upskill. This explains the boom in creators who blend information with entertainment."\n\nContent combining humor and education — such as comedy skits about UPSC prep or financial literacy tips — had the highest growth.',
     author: {
-      name: "Marcus Lee",
-      avatar: "/placeholder.svg"
+      name: "Devika Sharma",
+      avatar:
+        "https://i.pinimg.com/474x/ca/6d/44/ca6d44cd4116857707c205a120c5d21e.jpg",
     },
     publishDate: "2023-04-14T09:15:00Z",
     readTime: 6,
-    image: "/placeholder.svg",
+    image: "https://images.indianexpress.com/2024/06/IIT-Delhi.jpg?w=640",
     trending: true,
     tldr: {
       bulletPoints: [
-        "Stanford study analyzed 10,000+ TikTok videos",
-        "Educational content gets 42% more algorithmic promotion",
-        "Hybrid entertainment/educational videos perform best",
-        "Explains recent surge in 'EduTok' creator popularity"
+        "IIT Delhi analyzed 8,000+ viral Indian videos",
+        "Educational content saw more user engagement",
+        "Best-performing content blends education with fun",
+        "Rise in creators focusing on career and finance tips",
       ],
-      emojis: ["📱", "🧠", "📊", "💃"],
-      memeText: "Everyone: TikTok is just dancing teens. The Algorithm: Actually I'm something of a scientist myself"
+      emojis: ["📚", "📊", "📱", "🎓"],
+      memeText:
+        "Everyone: Reels are just dancing. India: Here's how to ace your IAS interview",
     },
-    tags: ["tiktok", "algorithm", "social media", "education"],
+    tags: ["education", "social media", "reels", "technology"],
     reactions: {
       fire: 873,
       mindblown: 1462,
       sad: 92,
-      cap: 341
-    }
+      cap: 341,
+    },
   },
   {
     id: "3",
-    title: "Virtual Reality Fashion Show Lets Attendees 'Try On' Designs In Real-Time",
-    slug: "vr-fashion-show-real-time-try-on",
+    title:
+      "India’s First VR Saree Show Lets Shoppers Virtually Drape Designs in Real Time",
+    slug: "vr-saree-show-india",
     category: "Fashion",
-    summary: "Revolutionary VR fashion event allows viewers to instantly try on runway looks on their digital avatars.",
-    content: "The future of fashion arrived yesterday as luxury brand Lumina hosted the world's first fully interactive virtual reality fashion show where all attendees could immediately \"try on\" runway designs using their digital avatars.\n\nThe groundbreaking event, titled \"Lumina Proxima,\" allowed VR attendees to not only watch models walk the digital runway but also instantly see how each look would appear on their own body type through advanced AR technology. Attendees could then place pre-orders for physical versions of the clothing or purchase digital-only versions for their avatars to wear across compatible metaverse platforms.\n\n\"This solves the biggest problem in fashion - seeing something on a model and having no idea if it would look good on you,\" said Lumina's creative director Zara Chen. \"Now you can know instantly.\"\n\nThe show featured over 40 designs, and Lumina reported that sales conversions were 320% higher than their traditional runway shows, with particularly strong performance among Gen Z consumers who purchased both physical and digital versions of the designs.\n\nFashion technology experts are calling this the first truly practical use case for VR fashion experiences, with several major brands already licensing the technology for upcoming shows.",
+    summary:
+      "Pioneering virtual saree showcase by Indian designer Meera Bansal lets users see styles on themselves before buying.",
+    content:
+      'In a first-of-its-kind event, celebrated Indian fashion designer Meera Bansal hosted a virtual reality saree fashion show, enabling users to try on sarees using digital avatars.\n\nDubbed “Drape Digital,” the immersive event let viewers see how each saree would fall and flow on their specific body type using AR-powered smartphones. Users could buy physical sarees or digital fashion items for avatars in Indian metaverse platforms.\n\n"This changes everything for online saree shopping," Bansal said. "It eliminates guesswork, especially for brides."\n\nThe show featured 50+ looks and drew over 2 lakh virtual attendees. Saree preorders surged 400% over traditional trunk shows. Several major Indian brands are now adopting the same tech for 2024 weddings.',
     author: {
-      name: "Skylar Johnson",
-      avatar: "/placeholder.svg"
+      name: "Kavya Nair",
+      avatar:
+        "https://i.pinimg.com/1200x/84/7a/a4/847aa4ea94e646a239324307bc3b4236.jpg",
     },
     publishDate: "2023-04-13T16:45:00Z",
     readTime: 5,
-    image: "/placeholder.svg",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5612AQEX9yaspR9K4w/article-cover_image-shrink_720_1280/B56ZWT.dM8HQAM-/0/1741944381528?e=1750291200&v=beta&t=aRirKH_PwTOnE34GaOK-6Dn-U8pdG2e3eeKcfoZgIw0",
     trending: false,
     tldr: {
       bulletPoints: [
-        "Luxury brand Lumina hosted first interactive VR fashion show",
-        "Attendees could instantly see clothes on their own avatars",
-        "Could purchase physical clothes or digital-only versions", 
-        "Sales were 320% higher than traditional runway shows"
+        "Designer Meera Bansal hosted India’s first VR saree show",
+        "Users could digitally drape sarees on their avatars",
+        "Physical and digital saree versions available",
+        "400% boost in saree sales after event",
       ],
-      emojis: ["👚", "🥽", "💃", "🛍️"]
+      emojis: ["👗", "💻", "🇮🇳", "🛍️"],
     },
-    tags: ["fashion", "VR", "technology", "metaverse"],
+    tags: ["fashion", "VR", "technology", "india"],
     reactions: {
       fire: 1104,
       mindblown: 1368,
       sad: 42,
-      cap: 156
+      cap: 156,
     },
     slangTerms: [
       {
         term: "served",
-        definition: "To present something impressive (e.g., 'That outfit served')"
+        definition:
+          "To present something impressive (e.g., 'That outfit served')",
       },
       {
         term: "ate and left no crumbs",
-        definition: "Did something perfectly, leaving nothing for others"
-      }
-    ]
+        definition: "Did something perfectly, leaving nothing for others",
+      },
+    ],
   },
   {
     id: "4",
-    title: "Study Finds Gen Z Prioritizes Mental Health Benefits Over Salary in Job Searches",
-    slug: "gen-z-prioritizes-mental-health-benefits",
+    title:
+      "Study: Indian Gen Z Chooses Mental Wellness Over High Salary in Job Hunts",
+    slug: "indian-gen-z-job-priorities",
     category: "Workplace",
-    summary: "New research reveals Gen Z job seekers rank mental health support above base salary when evaluating potential employers.",
-    content: "A comprehensive new study from the Workforce Institute has found that Generation Z job seekers consistently rank mental health support and work-life balance as more important factors than base salary when evaluating potential employers.\n\nThe study, which surveyed over 5,000 recent graduates and young professionals aged 18-25, found that 74% would choose a job with robust mental health benefits and flexible work arrangements over a position offering 20% higher salary but limited wellness support.\n\n\"We're seeing a fundamental shift in how the newest generation of workers evaluates career opportunities,\" said Dr. Aisha Reynolds, the study's lead researcher. \"While financial compensation remains important, it's no longer the primary motivator it once was.\"\n\nParticularly valued benefits included therapy service subscriptions, mental health days that don't count against sick leave, and manager training in supporting employee mental wellbeing. Companies offering dedicated meditation spaces and regular mental health workshops also scored significantly higher in attractiveness ratings.\n\nThe study has prompted several Fortune 500 companies to announce expanded mental health initiatives specifically targeting their youngest employees, signaling a potential long-term shift in workplace benefits packages.",
+    summary:
+      "New survey shows Indian youth value mental health perks more than salary packages when evaluating job offers.",
+    content:
+      'A report from the Indian Institute for Work Culture reveals that 71% of Indian Gen Z job seekers would prefer mental health support and flexible work culture over high salaries.\n\nSurveying over 4,500 college graduates and early professionals, the study noted strong preferences for workplace therapy access, mental wellness days, and less toxic work environments.\n\n"It’s clear that India\'s youth want to feel safe and supported, not just paid," said lead analyst Ruchi Deshmukh.\n\nStartups and MNCs in India are responding by integrating mindfulness sessions, subsidized therapy, and hybrid work flexibility into their HR policies. Experts believe this will be the norm by 2030.',
     author: {
-      name: "Tyler Zhang",
-      avatar: "/placeholder.svg"
+      name: "Samar Khan",
+      avatar:
+        "https://i.pinimg.com/236x/a9/9c/28/a99c28832c86daed67260e5c0f2832d7.jpg ",
     },
     publishDate: "2023-04-12T11:20:00Z",
     readTime: 7,
-    image: "/placeholder.svg",
+    image:
+      "https://images.storyboard18.com/storyboard18/2025/04/THEN-70-2025-04-feb82403bf88fed5c6cdc09befb4fcfd-1019x573.jpg?impolicy=website&width=738&height=440",
     trending: true,
     tldr: {
       bulletPoints: [
-        "74% of Gen Z would take lower salary for better mental health benefits",
-        "Therapy subscriptions and mental health days highly valued",
-        "Fortune 500 companies expanding mental health initiatives in response",
-        "Shows fundamental shift in workplace priorities"
+        "71% of Indian Gen Z prefers wellness over high salary",
+        "Therapy, hybrid work, and mental health leave are top perks",
+        "Indian companies updating HR strategies accordingly",
+        "Mental wellness now central to job decisions",
       ],
-      emojis: ["🧠", "💼", "💰", "🧘‍♀️"],
-      memeText: "Boomers: In my day we worked 80 hours and liked it! Gen Z: And I took that personally"
+      emojis: ["🧠", "🇮🇳", "🏢", "🧘‍♂️"],
+      memeText: "Uncles: Job is job, adjust. Gen Z: Self-care is not selfish.",
     },
-    tags: ["mental health", "workplace", "gen z", "benefits"],
+    tags: ["mental health", "jobs", "gen z", "india"],
     reactions: {
       fire: 932,
       mindblown: 547,
       sad: 85,
-      cap: 421
-    }
+      cap: 421,
+    },
   },
   {
     id: "5",
-    title: "New Music Platform Uses AI to Create Personalized Songs Based on Your Mood",
-    slug: "ai-music-platform-personalized-songs",
+    title:
+      "Indian Startup Uses AI to Create Mood-Based Music with Regional Flavors",
+    slug: "indian-ai-music-mood-based",
     category: "Music",
-    summary: "Revolutionary music service creates unique songs based on your mood, weather, and even heart rate.",
-    content: "Startup company Harmonia has launched a groundbreaking music platform that uses artificial intelligence to generate completely original songs tailored to each user's current mood, location, weather, and even biometric data if they opt to connect a wearable device.\n\nThe platform, which launched yesterday after two years in beta testing, asks users how they're feeling or what vibe they're seeking, then creates a completely unique composition that adapts in real-time. If connected to a smartwatch or fitness tracker, the music will even subtly shift to match the user's heart rate and movement patterns.\n\n\"This is music that literally nobody has ever heard before and nobody will ever hear again in exactly the same way,\" explained Harmonia co-founder Elena Varga. \"It's composed specifically for you, for this moment.\"\n\nEarly users report particularly strong results when the AI is given specific emotional cues like \"confident but slightly melancholic\" or \"energized but focused.\" The platform also offers a social feature where friends can listen to a shared composition that aims to create a vibe matching their collective mood.\n\nHarmonia uses a combination of machine learning trained on thousands of songs across genres and innovative algorithmic composition techniques. The company has emphasized that no copyrighted material is used in the generation process, addressing potential legal concerns in AI-generated music.",
+    summary:
+      "Delhi-based startup SwaraAI composes personalized songs in multiple Indian languages using AI and user emotions.",
+    content:
+      "SwaraAI, an Indian music tech startup, has launched a platform that generates personalized songs based on user mood, weather, and even heart rate. It supports Hindi, Tamil, Bengali, and more.\n\nThe app asks users how they're feeling — 'joyful', 'nostalgic', or 'heartbroken' — then generates original compositions in real time. With fitness device integration, music also responds to heartbeat and movement.\n\n\"Every user gets a song made just for them, and often, in their own language,\" said founder Rajeev Sharma. \"It’s like your emotions talking through music.\"\n\nSocial features allow friend groups to listen together, creating shared moods. No copyrighted content is used — a relief for creators and listeners alike.",
     author: {
-      name: "Jordan Rivera",
-      avatar: "/placeholder.svg"
+      name: "Priya Reddy",
+      avatar:
+        "https://i.pinimg.com/564x/5a/7b/c9/5a7bc9ee8614eef19ae0caf54f24af30.jpg",
     },
     publishDate: "2023-04-11T13:50:00Z",
     readTime: 5,
-    image: "/placeholder.svg",
+    image:
+      "https://www.radioandmusic.com/sites/www.radioandmusic.com/files/images/entertainment/2025/02/18/ai-music-pic.jpg",
     trending: false,
     tldr: {
       bulletPoints: [
-        "Harmonia creates unique AI songs based on your current mood",
-        "Can connect to wearable devices to match music to heart rate",
-        "Each song is completely original and never heard before",
-        "Offers shared listening experience for friends"
+        "SwaraAI creates mood-based music in Indian languages",
+        "Adapts songs using emotion and wearable data",
+        "Every song is uniquely generated for the user",
+        "App includes group listening and vibe matching",
       ],
-      emojis: ["🎵", "🤖", "❤️", "🧠"]
+      emojis: ["🎶", "🧠", "🕉️", "📱"],
     },
-    tags: ["music", "AI", "technology", "personalization"],
+    tags: ["music", "AI", "personalization", "india"],
     reactions: {
       fire: 1542,
       mindblown: 1203,
       sad: 37,
-      cap: 184
+      cap: 184,
     },
     slangTerms: [
       {
         term: "slaps",
-        definition: "Music that's really good (e.g., 'This song slaps')"
+        definition: "Music that's really good (e.g., 'This song slaps')",
       },
       {
         term: "understood the assignment",
-        definition: "Did exactly what was needed; met expectations perfectly"
-      }
-    ]
+        definition: "Did exactly what was needed; met expectations perfectly",
+      },
+    ],
   },
   {
     id: "6",
-    title: "Viral TikTok Chef Lands Major Netflix Deal After Dorm Room Cooking Series",
-    slug: "tiktok-chef-netflix-deal-dorm-cooking",
+    title:
+      "Indian Student Chef Goes Viral, Inks Deal with SonyLIV for Desi Cooking Show",
+    slug: "student-chef-sonyliv-deal",
     category: "Entertainment",
-    summary: "College student who gained fame cooking gourmet meals with dorm room appliances signs multi-million dollar streaming deal.",
-    content: "Miguel Diaz, the 19-year-old college sophomore who shot to TikTok fame by creating gourmet meals using only dorm room appliances, has signed a multi-million dollar deal with Netflix for a cooking series and development deal.\n\nDiaz, who studies computer science at Arizona State University, began posting videos of his ingenious cooking techniques last year when his residence hall prohibited students from having hot plates or traditional cooking equipment. Using only a microwave, electric kettle, mini-fridge, and occasionally a hair straightener, Diaz created elaborate dishes like sous-vide steak, perfect risotto, and even a thanksgiving dinner.\n\nHis account, @DormRoomChef, accumulated over 12 million followers in just 10 months. His signature catchphrase - \"We make do with what we have\" - has become a trending audio clip used in videos beyond cooking.\n\n\"I never expected this to become my career,\" Diaz said in a statement. \"I was just trying to eat better than dining hall food without breaking dorm rules. The fact that this is now my job is completely surreal.\"\n\nThe Netflix deal includes a cooking series titled \"Making Do with Miguel\" and a development deal for additional food-related content. The first season will feature Diaz teaching celebrities how to create impressive meals with minimal equipment and ingredients, premiering this fall.",
+    summary:
+      "Engineering student who cooked Indian meals in hostel room signs series deal with SonyLIV after TikTok fame.",
+    content:
+      "Rishabh Mehta, a 20-year-old student from IIT Bombay, has signed a show deal with SonyLIV after gaining millions of followers for his inventive hostel cooking videos.\n\nUsing nothing more than an induction plate, a rice cooker, and a kettle, Mehta made full Indian meals — from rajma chawal to butter chicken — without ever leaving his hostel.\n\nHis signature phrase “Hostel hai, par hunger elite hai” has gone viral. His TikTok and Instagram accounts now boast over 10 million followers.\n\nThe new show, *Hostel Chef Rishabh*, premieres this summer and features celebrities trying to recreate classic Indian dishes using hostel-approved tools.",
     author: {
-      name: "Aisha Patel",
-      avatar: "/placeholder.svg"
+      name: "Neha Pillai",
+      avatar:
+        "https://i.pinimg.com/236x/45/94/9b/45949bc3b2c8aaca94e64406bc956b05.jpg",
     },
     publishDate: "2023-04-10T15:30:00Z",
     readTime: 4,
-    image: "/placeholder.svg",
+    image: "https://i.ytimg.com/vi/Ty22u-NNyt0/maxresdefault.jpg",
     trending: true,
     tldr: {
       bulletPoints: [
-        "19-year-old Miguel Diaz turned dorm room cooking TikToks into Netflix deal",
-        "Created gourmet meals with just microwave, kettle, and mini-fridge",
-        "Gained 12 million followers in 10 months with creative cooking hacks",
-        "Netflix series 'Making Do with Miguel' premieres this fall"
+        "IIT Bombay student Rishabh Mehta signs SonyLIV cooking show deal",
+        "Cooked Indian dishes using hostel gadgets",
+        "10M+ social followers and viral catchphrases",
+        "Show *Hostel Chef Rishabh* debuts this summer",
       ],
-      emojis: ["👨‍🍳", "🍽️", "🏢", "📱"],
-      memeText: "University: No cooking appliances allowed. Miguel: And I took that personally"
+      emojis: ["🍛", "🎬", "🏠", "📲"],
+      memeText:
+        "Hostel rules: No stove allowed. Rishabh: Butter chicken with a kettle, it is.",
     },
-    tags: ["tiktok", "cooking", "netflix", "viral"],
+    tags: ["tiktok", "food", "india", "viral"],
     reactions: {
       fire: 2145,
       mindblown: 876,
       sad: 23,
-      cap: 97
-    }
-  }
+      cap: 97,
+    },
+  },
 ];
 
 // Function to simulate getting news based on mood
@@ -309,10 +341,10 @@ export const getNewsByMood = (moodId: string): NewsItem[] => {
 
 // Function to get trending news
 export const getTrendingNews = (): NewsItem[] => {
-  return newsItems.filter(item => item.trending);
+  return newsItems.filter((item) => item.trending);
 };
 
 // Function to get news by ID
 export const getNewsById = (id: string): NewsItem | undefined => {
-  return newsItems.find(item => item.id === id);
+  return newsItems.find((item) => item.id === id);
 };
