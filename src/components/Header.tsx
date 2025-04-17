@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Menu,
   Search,
@@ -31,9 +31,14 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { newsItems } from "@/data/newsData";
 
 const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [quickSearchResults, setQuickSearchResults] = useState<
+    typeof newsItems
+  >([]);
   const [notifications, setNotifications] = useState([
     {
       id: 1,
@@ -57,13 +62,36 @@ const Header = () => {
 
   const { toast } = useToast();
   const location = useLocation();
+  const navigate = useNavigate();
   const { isLoggedIn, login, logout } = useAuth();
   const { darkMode, toggleDarkMode } = useTheme();
 
-  // Check if a nav link is active
   const isActive = (path) => {
     return location.pathname === path;
   };
+
+  useEffect(() => {
+    setIsSearchOpen(false);
+    setSearchValue("");
+    setQuickSearchResults([]);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (searchValue.trim().length >= 2) {
+      const lowerCaseQuery = searchValue.toLowerCase();
+      const results = newsItems
+        .filter(
+          (item) =>
+            item.title.toLowerCase().includes(lowerCaseQuery) ||
+            item.category.toLowerCase().includes(lowerCaseQuery)
+        )
+        .slice(0, 3);
+
+      setQuickSearchResults(results);
+    } else {
+      setQuickSearchResults([]);
+    }
+  }, [searchValue]);
 
   const handleQuickLogin = () => {
     login();
@@ -92,6 +120,20 @@ const Header = () => {
       description: "The notification has been removed",
       duration: 2000,
     });
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (searchValue.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchValue.trim())}`);
+      setIsSearchOpen(false);
+    }
+  };
+
+  const handleQuickResultClick = (id: string) => {
+    navigate(`/article/${id}`);
+    setIsSearchOpen(false);
   };
 
   return (
@@ -321,21 +363,66 @@ const Header = () => {
             </Button>
           ) : (
             <div className="relative animate-fade-in">
-              <input
-                type="text"
-                className="genz-input w-full md:w-[200px] py-1 text-sm"
-                placeholder="Search articles..."
-                autoFocus
-                onBlur={() => setIsSearchOpen(false)}
-              />
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-1 top-1/2 -translate-y-1/2"
-                onClick={() => setIsSearchOpen(false)}
-              >
-                <Search className="h-4 w-4" />
-              </Button>
+              <form onSubmit={handleSearchSubmit}>
+                <input
+                  type="text"
+                  className="genz-input w-full md:w-[200px] py-1 text-sm"
+                  placeholder="Search articles..."
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  autoFocus
+                />
+                <Button
+                  type="submit"
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-1 top-1/2 -translate-y-1/2"
+                >
+                  <Search className="h-4 w-4" />
+                </Button>
+              </form>
+
+              {quickSearchResults.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-background rounded-md shadow-lg border z-50 max-h-[300px] overflow-auto">
+                  <div className="p-2">
+                    {quickSearchResults.map((result) => (
+                      <div
+                        key={result.id}
+                        className="p-2 hover:bg-muted rounded-md cursor-pointer"
+                        onClick={() => handleQuickResultClick(result.id)}
+                      >
+                        <p className="font-medium text-sm truncate">
+                          {result.title}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {result.category}
+                        </p>
+                      </div>
+                    ))}
+                    <div
+                      className="p-2 mt-1 bg-primary/10 hover:bg-primary/20 rounded-md cursor-pointer text-center"
+                      onClick={() =>
+                        navigate(
+                          `/search?q=${encodeURIComponent(searchValue.trim())}`
+                        )
+                      }
+                    >
+                      <p className="text-sm font-medium">See all results</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {searchValue.trim().length >= 2 &&
+                quickSearchResults.length === 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-background rounded-md shadow-lg border z-50">
+                    <div className="p-4 text-center">
+                      <p className="text-sm text-muted-foreground">
+                        No results found for "{searchValue}"
+                      </p>
+                    </div>
+                  </div>
+                )}
             </div>
           )}
 

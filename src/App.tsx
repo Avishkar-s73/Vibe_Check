@@ -15,6 +15,7 @@ import CrownOrCancel from "./pages/CrownOrCancel";
 import CategoryPage from "./pages/CategoryPage";
 import Profile from "./pages/Profile";
 import Categories from "./pages/Categories";
+import SearchPage from "./pages/SearchPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/category/:category" element={<CategoryPage />} />
               <Route path="/categories" element={<Categories />} />
               <Route path="/profile/:id?" element={<Profile />} />
+              <Route path="/search" element={<SearchPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
