@@ -1,11 +1,10 @@
-
-import React, { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { newsItems } from '@/data/newsData';
-import NewsCard from '@/components/NewsCard';
-import { motion } from 'framer-motion';
-import { Bookmark } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { newsItems } from "@/data/newsData";
+import NewsCard from "@/components/NewsCard";
+import { motion } from "framer-motion";
+import { Bookmark } from "lucide-react";
 
 const Bookmarks = () => {
   // In a real app, bookmarked news would come from user data
@@ -13,11 +12,13 @@ const Bookmarks = () => {
   const [bookmarkedNews] = useState(() => {
     return newsItems.slice(0, 6);
   });
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-grow container py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +29,7 @@ const Bookmarks = () => {
             <Bookmark className="h-6 w-6 text-primary" />
             <h1 className="text-3xl font-bold">Saved News</h1>
           </div>
-          
+
           {bookmarkedNews.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {bookmarkedNews.map((article, index) => (
@@ -46,7 +47,7 @@ const Bookmarks = () => {
           )}
         </motion.div>
       </main>
-      
+
       <Footer />
     </div>
   );

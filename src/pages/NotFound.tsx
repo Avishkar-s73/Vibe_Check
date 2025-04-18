@@ -16,6 +16,7 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+    window.scrollTo(0, 0);
   }, [location.pathname]);
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

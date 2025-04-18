@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,18 +14,22 @@ import NewsCard from "@/components/NewsCard";
 const Profile = () => {
   const { id } = useParams<{ id?: string }>();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Default to current user if no id is provided
   const isCurrentUser = !id;
 
   // Mock user data - would come from API in a real app
   const userData = {
-    name: isCurrentUser ? "Your Profile" : "Stranger Profile",
+    name: isCurrentUser ? "Avishkar Durgade" : "Stranger Profile",
     username: isCurrentUser ? "vibechecker" : "stranger",
     avatar: isCurrentUser
-      ? "https://freepngimg.com/thumb/doraemon/35165-2-doraemon-hd-thumb.png"
+      ? "/profile-pic.png"
       : "https://freepngimg.com/thumb/doraemon/35165-2-doraemon-hd-thumb.png",
     bio: "Gen Z news enthusiast. Always looking for stories that pass the vibe check.",
-    joinedDate: "January 2023",
+    joinedDate: "April 2025",
     followers: 1248,
     following: 365,
     interests: ["Technology", "Entertainment", "Fashion"],
