@@ -220,7 +220,7 @@ export const newsItems: NewsItem[] = [
     author: {
       name: "Samar Khan",
       avatar:
-        "https://i.pinimg.com/236x/a9/9c/28/a99c28832c86daed67260e5c0f2832d7.jpg ",
+        "https://i.pinimg.com/236x/a9/9c/28/a99c28832c86daed67260e5c0f2832d7.jpg",
     },
     publishDate: "2023-04-12T11:20:00Z",
     readTime: 7,

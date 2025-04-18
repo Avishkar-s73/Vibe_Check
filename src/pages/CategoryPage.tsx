@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,6 +24,10 @@ const CategoryPage = () => {
     politics: "🏛️",
     health: "🏥",
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Format category name for display
   const displayCategory = category
