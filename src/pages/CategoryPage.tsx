@@ -9,12 +9,10 @@ import NewsCard from "@/components/NewsCard";
 const CategoryPage = () => {
   const { category } = useParams<{ category: string }>();
 
-  // Filter news by category
   const categoryNews = newsItems.filter(
     (item) => item.category.toLowerCase() === category?.toLowerCase()
   );
 
-  // Category emojis
   const categoryEmojis = {
     entertainment: "🎭",
     technology: "💻",
@@ -29,7 +27,6 @@ const CategoryPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Format category name for display
   const displayCategory = category
     ? category.charAt(0).toUpperCase() + category.slice(1)
     : "";

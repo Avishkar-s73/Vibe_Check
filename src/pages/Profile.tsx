@@ -18,10 +18,8 @@ const Profile = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Default to current user if no id is provided
   const isCurrentUser = !id;
 
-  // Mock user data - would come from API in a real app
   const userData = {
     name: isCurrentUser ? "Avishkar Durgade" : "Stranger Profile",
     username: isCurrentUser ? "vibechecker" : "stranger",
@@ -35,7 +33,6 @@ const Profile = () => {
     interests: ["Technology", "Entertainment", "Fashion"],
   };
 
-  // Get some random articles for user's activity
   const userArticles = newsItems.slice(0, 6);
 
   return (

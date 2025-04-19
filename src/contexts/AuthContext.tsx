@@ -1,5 +1,4 @@
-
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 type User = {
   name: string;
@@ -14,27 +13,28 @@ type AuthContextType = {
 };
 
 const defaultUser: User = {
-  name: 'VibeCheck User',
-  avatar: 'https://i.pravatar.cc/150?img=8'
+  name: "VibeCheck User",
+  avatar: "https://i.pravatar.cc/150?img=8",
 };
 
 const AuthContext = createContext<AuthContextType>({
   isLoggedIn: false,
   user: null,
   login: () => {},
-  logout: () => {}
+  logout: () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
-  
-  // Check local storage on mount
+
   useEffect(() => {
-    const storedLoginState = localStorage.getItem('isLoggedIn');
-    if (storedLoginState === 'true') {
+    const storedLoginState = localStorage.getItem("isLoggedIn");
+    if (storedLoginState === "true") {
       setIsLoggedIn(true);
       setUser(defaultUser);
     }
@@ -43,13 +43,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = () => {
     setIsLoggedIn(true);
     setUser(defaultUser);
-    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem("isLoggedIn", "true");
   };
 
   const logout = () => {
     setIsLoggedIn(false);
     setUser(null);
-    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.setItem("isLoggedIn", "false");
   };
 
   return (

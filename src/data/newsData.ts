@@ -332,19 +332,14 @@ export const newsItems: NewsItem[] = [
   },
 ];
 
-// Function to simulate getting news based on mood
 export const getNewsByMood = (moodId: string): NewsItem[] => {
-  // In a real app, this would filter based on mood relationships to content
-  // For this demo, we'll just shuffle and return a subset
   return [...newsItems].sort(() => 0.5 - Math.random()).slice(0, 4);
 };
 
-// Function to get trending news
 export const getTrendingNews = (): NewsItem[] => {
   return newsItems.filter((item) => item.trending);
 };
 
-// Function to get news by ID
 export const getNewsById = (id: string): NewsItem | undefined => {
   return newsItems.find((item) => item.id === id);
 };

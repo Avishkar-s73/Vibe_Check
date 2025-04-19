@@ -9,12 +9,10 @@ const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const navigate = useNavigate();
 
-  // Get trending articles for the hero carousel
   const featuredArticles = newsItems
     .filter((item) => item.trending)
     .slice(0, 5);
 
-  // Auto-advance the carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % featuredArticles.length);
@@ -41,7 +39,6 @@ const HeroSection = () => {
     navigate("/crown-or-cancel");
   };
 
-  // Animated numbers for the readers joined statistic
   const animatedReaders = {
     numbers: ["3.2k", "3.3k", "3.4k", "3.5k", "3.6k"],
     emojis: ["🙂", "😎", "🤩", "🔥", "✨"],
@@ -49,7 +46,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden py-10 md:py-16">
-      {/* Decorative elements */}
       <motion.div
         className="absolute top-0 left-0 w-64 h-64 bg-genz-purple opacity-10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
         animate={{
@@ -184,7 +180,6 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative">
-              {/* Carousel controls */}
               <div className="absolute top-1/2 left-4 z-10 -translate-y-1/2">
                 <Button
                   size="icon"
@@ -207,7 +202,6 @@ const HeroSection = () => {
                 </Button>
               </div>
 
-              {/* Carousel */}
               <div className="relative overflow-hidden rounded-2xl">
                 <div
                   className="flex transition-transform duration-500 ease-out"
@@ -241,7 +235,7 @@ const HeroSection = () => {
                                 alt={article.author.name}
                                 className="w-8 h-8 rounded-full mr-2 border-2 border-white/20"
                               />
-                              {/* Fixed the issue here - only use the author name, not id */}
+
                               <span>{article.author.name}</span>
                             </div>
                           </div>
@@ -251,7 +245,6 @@ const HeroSection = () => {
                   ))}
                 </div>
 
-                {/* Carousel indicators */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                   {featuredArticles.map((_, index) => (
                     <button
@@ -265,7 +258,6 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating elements */}
               <motion.div
                 className="absolute -top-5 -right-5 bg-white rounded-lg shadow-lg p-3 flex items-center gap-2"
                 initial={{ y: 20, opacity: 0 }}
