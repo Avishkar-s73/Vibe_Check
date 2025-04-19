@@ -37,12 +37,10 @@ const ArticlePage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Get related articles (same category)
   const relatedArticles = newsItems
     .filter((item) => item.id !== id && item.category === article?.category)
     .slice(0, 3);
 
-  // Dummy comments
   const dummyComments = [
     {
       id: 1,

@@ -62,7 +62,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Gen Z vibrant color palette
+
         genz: {
           purple: "#9b87f5",
           pink: "#D946EF",

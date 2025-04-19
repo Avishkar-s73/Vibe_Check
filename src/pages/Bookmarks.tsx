@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 import { Bookmark } from "lucide-react";
 
 const Bookmarks = () => {
-  // In a real app, bookmarked news would come from user data
-  // For demo purposes, we're just showing random articles
   const [bookmarkedNews] = useState(() => {
     return newsItems.slice(0, 6);
   });

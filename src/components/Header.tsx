@@ -313,7 +313,6 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Search bar - now placed in the main navbar line */}
           <div className="flex-1 mx-2 hidden md:block">
             <form onSubmit={handleSearchSubmit} className="relative w-full">
               <div className="relative w-full">
@@ -382,7 +381,6 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-2 ml-auto">
-            {/* Mobile search toggle */}
             <Button
               variant="ghost"
               size="icon"
@@ -560,7 +558,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile search overlay */}
         {isMobile && isSearchOpen && (
           <div className="absolute inset-x-0 top-full z-50 bg-background border-b p-4">
             <form onSubmit={handleSearchSubmit} className="relative w-full">

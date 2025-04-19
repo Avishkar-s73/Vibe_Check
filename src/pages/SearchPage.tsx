@@ -35,7 +35,6 @@ const SearchPage = () => {
   const [sortBy, setSortBy] = useState<string>("relevance");
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
 
-  // Load recent searches from localStorage on component mount
   useEffect(() => {
     const savedSearches = localStorage.getItem("recentSearches");
     if (savedSearches) {
@@ -44,24 +43,20 @@ const SearchPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Save recent searches to localStorage when updated
   useEffect(() => {
     localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
   }, [recentSearches]);
 
-  // Add the current search query to recent searches
   useEffect(() => {
     if (query && query.trim() !== "") {
       setRecentSearches((prev) => {
-        // Remove the query if it already exists to avoid duplicates
         const filteredSearches = prev.filter((s) => s !== query);
-        // Add the new query to the beginning and limit to 5 recent searches
+
         return [query, ...filteredSearches].slice(0, 5);
       });
     }
   }, [query]);
 
-  // Perform the search whenever the query changes
   useEffect(() => {
     if (!query || query.trim() === "") {
       setSearchResults([]);
@@ -71,7 +66,6 @@ const SearchPage = () => {
 
     const lowerCaseQuery = query.toLowerCase();
 
-    // Search in title, content, category, tags, and author
     const results = newsItems.filter(
       (item) =>
         item.title.toLowerCase().includes(lowerCaseQuery) ||
@@ -84,18 +78,15 @@ const SearchPage = () => {
     setSearchResults(results);
   }, [query]);
 
-  // Apply filters and sorting whenever search results or filters change
   useEffect(() => {
     let filtered = [...searchResults];
 
-    // Apply category filter
     if (selectedCategory !== "all") {
       filtered = filtered.filter(
         (item) => item.category.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
 
-    // Apply sorting
     switch (sortBy) {
       case "newest":
         filtered.sort(
@@ -126,7 +117,7 @@ const SearchPage = () => {
           return bReactions - aReactions;
         });
         break;
-      // For relevance, we keep the original order which is based on match strength
+
       default:
         break;
     }
@@ -136,8 +127,7 @@ const SearchPage = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // The search is triggered by updating the URL search params
-    // which in turn triggers the useEffect that performs the search
+
     const input = (e.target as HTMLFormElement).elements.namedItem(
       "searchInput"
     ) as HTMLInputElement;
@@ -160,11 +150,10 @@ const SearchPage = () => {
     searchQuery: string,
     e: React.MouseEvent
   ) => {
-    e.stopPropagation(); // Prevent triggering the parent click handler
+    e.stopPropagation();
     setRecentSearches((prev) => prev.filter((s) => s !== searchQuery));
   };
 
-  // Get unique categories from all news items for the filter dropdown
   const categories = [
     "all",
     ...Array.from(

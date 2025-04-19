@@ -19,11 +19,9 @@ const CrownOrCancel = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Select a subset of news for crown or cancel
   const crownOrCancelItems = newsItems.slice(0, 10);
 
   const handleSwipe = (direction) => {
-    // If we've reached the end, loop back to the beginning
     if (currentIndex === crownOrCancelItems.length - 1 && direction === 1) {
       setCurrentIndex(0);
     } else if (currentIndex === 0 && direction === -1) {
@@ -44,7 +42,6 @@ const CrownOrCancel = () => {
       duration: 2000,
     });
 
-    // Move to the next item after a short delay
     setTimeout(() => handleSwipe(1), 500);
   };
 

@@ -124,7 +124,6 @@ const NewsCard: React.FC<NewsCardProps> = ({ article, index = 0 }) => {
             </div>
           )}
 
-          {/* Crown or Cancel overlay */}
           {isHovered && (
             <motion.div
               className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center gap-4"

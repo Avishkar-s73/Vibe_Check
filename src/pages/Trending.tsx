@@ -10,7 +10,6 @@ const Trending = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Filter trending news
   const trendingNews = newsItems.filter((item) => item.trending);
 
   return (
